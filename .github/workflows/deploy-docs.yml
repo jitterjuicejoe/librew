@@ -8,14 +8,12 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v3
+    - name: checkout
+      uses: actions/checkout@v3
       with:
-        fetch-depth: 0
-        lfs: 'true'
-        submodules: 'recursive'
-      env:
-        GIT_CURL_VERBOSE: '1'
-        GIT_TRACE: '1'
+        lfs: true
+    - name: checkoutLFS
+      run: git lfs pull
     - name: Install mdbook
       run: |
         mkdir mdbook
