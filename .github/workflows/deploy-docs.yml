@@ -13,7 +13,7 @@ jobs:
       with:
         lfs: true
     - name: checkoutLFS
-      run: git lfs pull
+      run: git lfs checkout
     - name: Install mdbook
       run: |
         mkdir mdbook
