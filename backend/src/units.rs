@@ -38,11 +38,13 @@ impl<T: Copy, Q: Quantity, U: Unit> Scalar<T, Q, U> {
     }
 }
 
+pub struct Celcius;
 pub struct Kelvin;
 pub struct Temperature;
 
+impl Unit for Celcius {}
 impl Unit for Kelvin {}
 impl Quantity for Temperature {}
 
 pub type TemperatureKelvin = Scalar<f64, Temperature, Kelvin>;
-
+pub type TemperatureCelcius = Scalar<f64, Temperature, Celcius>;
